@@ -7,48 +7,47 @@
     <title>Piedra Papel o Tijera</title>
     <script>
         //1. Piedra 2. Papel  3.Tijera
-        let jugador=0
-        let pc=Math.floor(Math.random()*3)+1;
-        jugador=prompt("Choose 1 for rock 2 for paper 3 for scissors")
-        //alert("Elegiste "+jugador)
-        if(jugador==1){
-            alert("You chose Rock 💎")
-        }else if(jugador==2){
-            alert("You chose 🧻")
-        }else if(jugador==3){
-            alert("You chose ✂")
-        }else{
-            window.location.reload()
+        let jugador = 0
+        let pc = Math.floor(Math.random() * 3) + 1;
+        function eleccion(jugada) {
+            let resultado = " ";
+            if (jugada == 1) {
+                resultado = "Chose Rock 👊"
+            } else if (jugada == 2) {
+                resultado = "Chose Paper ✋"
+            } else if (jugada == 3) {
+                resultado = "Chose Scissor ✌"
+            } else {
+                resultado = "Chose nothing 😶"
+                window.location.reload()
+            }
+            return resultado;
         }
-        if(pc==1){
-            alert("You chose Rock 💎")
-        }else if(pc==2){
-            alert("You chose 🧻")
-        }else if(pc==3){
-            alert("You chose ✂")
-        }else{
-            window.location.reload()
-        }
+        jugador = prompt("Choose 1 for rock 2 for paper 3 for scissors")
+
+
+        alert("PC " + eleccion(pc))
+        alert("Player " + eleccion(jugador))
+
+
         //COMBATE
-        if(pc==jugador){
+        if (pc == jugador) {
             alert("DRAW")
-        }else if(jugador==1&&pc==3) {
+        } else if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)) {
             alert("YOU WIN")
-        } else if(jugador==2&&pc==1) {
-            alert("YOU WIN")
-        } 
-        else if(jugador==2&&pc==1) {
-            alert("YOU WIN")
-        }   
-        else{
+        }
+        else {
             alert("GAME OVER")
         }
     </script>
 </head>
 
 <body>
-<h1>Piedra Papel o Tijera</h1>
-<p>The game "rock, paper, scissors" is a hand game where two players choose from three options: rock, paper, or scissors. Rock beats scissors, scissors beat paper, and paper beats rock. The objective is to select the option that defeats the option chosen by the opponent. It is a simple and fun game often played to make quick decisions or resolve conflicts in a friendly manner.</p>
+    <h1>Piedra Papel o Tijera</h1>
+    <p>The game "rock, paper, scissors" is a hand game where two players choose from three options: rock, paper, or
+        scissors. Rock beats scissors, scissors beat paper, and paper beats rock. The objective is to select the option
+        that defeats the option chosen by the opponent. It is a simple and fun game often played to make quick decisions
+        or resolve conflicts in a friendly manner.</p>
 </body>
 
 </html>
